@@ -1,0 +1,29 @@
+<router-outlet />
+
+<div style="text-align:center">
+  <h1>Consulta de Usuarios</h1>
+  <button (click)="getUsers()">Buscar Usuarios</button>
+</div>
+
+<hr>
+
+<div class="table-container" *ngIf="showTable">
+  <h2>Lista de Usuarios</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.usuId }}</td>
+        <td>{{ user.nombre }}</td>
+        <td>{{ user.apellido }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
